@@ -21,7 +21,7 @@ module.exports = {
 
   plugins: [],
 
-  modules: ['@nuxtjs/axios', 'bootstrap-vue/nuxt'],
+  modules: ['@nuxtjs/axios', 'bootstrap-vue/nuxt', '@nuxtjs/vuetify'],
 
   axios: {
     baseURL: 'https://ask-caremanager.firebaseio.com'

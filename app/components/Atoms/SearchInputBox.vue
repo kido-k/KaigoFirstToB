@@ -3,7 +3,7 @@
     <input
       type="text"
       class="form-control"
-      placeholder="病名、症状、体の部位名、お薬名から探す">
+      placeholder="ケアマネージャーを探す">
   </div>
 </template>
 
