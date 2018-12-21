@@ -28,7 +28,7 @@ export default {
   },
 
   async asyncData({ store }) {
-    await store.dispatch('qalist/fetchQAList')
+    await store.dispatch('caremanager/fetchCaremanaList')
   }
 }
 </script>

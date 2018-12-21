@@ -3,24 +3,26 @@
     <div class="list-group">
       <ul>
         <li
-          v-for="qa in qalist"
-          :key="qa.title">
+          v-for="caremana in caremanalist"
+          :key="caremana.name">
           <a
             href="#"
             class="list-group-item list-group-item-action flex-column align-items-start qa-list">
             <div class="d-flex">
               <div class="panel-innersub main-font-color">
-                Q
+                <img
+                  src="../../assets/caremana-image/caremana1.png"
+                  alt= "">
               </div>
               <div class="panel-innermain">
-                <h3>{{ qa.title }}</h3>
-                <small class="sub-label">{{ qa.author }}</small>
-                <small class="sub-label">{{ qa.posttime }}</small>
-                <p class="panel-contents">{{ qa.body }}</p>
-                <p class="qa-footer-l main-font-color">{{ qa.answer }}</p>
+                <h3>{{ caremana.name }}</h3>
+                <small class="sub-label">{{ caremana.name }}</small>
+                <small class="sub-label">{{ caremana.gender }}</small>
+                <p class="panel-contents">{{ caremana.comment }}</p>
+                <p class="qa-footer-l main-font-color">{{ caremana.major }}</p>
                 <a
                   class="qa-footer-r"
-                  href="#">{{ qa.category }}</a>
+                  href="#">{{ caremana.area }}</a>
               </div>
             </div>
           </a>
@@ -35,7 +37,7 @@
   display: inline-block;
   padding: 0;
   margin: 0;
-  width: 90%;
+  width: 40%;
 }
 .qa-list {
   padding: 20px;
@@ -90,11 +92,8 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  async asyncData({ store }) {
-    await store.dispatch('qalist/fetchQAList')
-  },
   computed: {
-    ...mapGetters({ qalist: 'qalist/getExamples' })
+    ...mapGetters({ caremanalist: 'caremanager/getCaremanagers' })
   }
 }
 </script>
