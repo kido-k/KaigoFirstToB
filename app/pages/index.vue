@@ -4,7 +4,10 @@
       <Header/>
     </div>
     <div class="main">
-      <div class="feature-consult">
+      <div class="search-bar">
+        <SearchCareMana/>
+      </div>
+      <div class="caremana-list">
         <CareManager/>
       </div>
       <div class="">
@@ -16,6 +19,7 @@
 
 <script>
 import Header from '~/components/Organisms/TheHeader.vue'
+import SearchCareMana from '~/components/Organisms/TheSearchCareMana.vue'
 import CareManager from '~/components/Organisms/TheCareManager.vue'
 import Footer from '~/components/Organisms/TheFooter.vue'
 import { mapGetters, mapActions } from 'vuex'
@@ -23,12 +27,14 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   components: {
     Header,
+    SearchCareMana,
     CareManager,
     Footer
   },
 
   async asyncData({ store }) {
     await store.dispatch('caremanager/fetchCaremanaList')
+    await store.dispatch('fetchCategoryList')
   }
 }
 </script>
@@ -39,24 +45,10 @@ export default {
   padding: 0px;
   text-align: center;
 }
-.middlecontent {
-  background-color: #e2eff8;
-  margin: 40px 0 0 0;
-  padding: 40px 0;
-}
-.pdca {
+.search-bar {
   margin: 40px 0 0 0;
 }
-.feature-word {
-  padding: 30px 0 0 0;
-  margin: 0 0 0 0;
-}
-.feature-consult {
-  padding: 30px 0 0 0;
-  margin: 0 0 0 0;
-}
-.ask-category {
-  margin: 0px;
-  padding: 0px;
+.caremana-list {
+  margin: 40px 0 0 0;
 }
 </style>

@@ -1,32 +1,24 @@
-// const state = () => ({
-//   count: 0
-// })
+export const state = () => ({
+  categoryList: []
+})
 
-// const getters = {
-//   count: state => state.count
-// }
+export const getters = {
+  getCategory: state => state.categoryList
+}
 
-// const mutations = {
-//   increment(state) {
-//     state.count++
-//   },
-//   decrement(state) {
-//     state.count--
-//   }
-// }
+export const mutations = {
+  addCategory(state, category) {
+    state.categoryList.push(category[1])
+  },
+  clearCategory(state) {
+    state.categoryList = []
+  }
+}
 
-// const actions = {
-//   increment({ commit }) {
-//     commit('increment')
-//   },
-//   decrement({ commit }) {
-//     commit('decrement')
-//   }
-// }
-
-// module.exports = {
-//   state,
-//   getters,
-//   mutations,
-//   actions
-// }
+export const actions = {
+  async fetchCategoryList({ commit }) {
+    const categoryList = await this.$axios.$get(`/category.json`)
+    commit('clearCategory')
+    Object.entries(categoryList).forEach(c => commit('addCategory', c))
+  }
+}

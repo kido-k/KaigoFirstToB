@@ -8,9 +8,10 @@
         row
         wrap>
         <v-flex
-          v-for="(caremana) in caremanalist"
+          v-for="caremana in caremanalist"
           :key="caremana.name"
-          xs6>
+          xs5
+          class="list-margin">
           <a
             href="#"
             class="list-group-item list-group-item-action care-list">
@@ -24,7 +25,7 @@
               <div class="panel-innermain">
                 <div class="list">
                   <h3>{{ caremana.name }}</h3>
-                  <small class="sub-label">{{ caremana.gender }}</small>
+                  <h3 class="gender">&nbsp;&nbsp;&nbsp;{{ caremana.gender }}</h3>
                 </div>
                 <p class="panel-contents">{{ caremana.comment }}</p>
                 <p class="footer-left main-font-color">{{ caremana.major }}</p>
@@ -43,15 +44,18 @@
 <style scoped>
 .care-manager-list {
   display: inline-block;
-  margin: 20px;
 }
 .care-list {
   padding: 5px 10px;
-  margin: 24px 0 0 0;
+  margin: 0 0 0 9%;
 }
 .image {
   max-width: 120px;
   max-height: 120px;
+}
+.list-margin {
+  margin: auto;
+  margin: 2%;
 }
 .panel-innersub {
   float: left;
@@ -67,7 +71,9 @@
   text-align: left;
   font-size: 0.875rem;
 }
-.sub-label {
+.gender {
+  margin: 4px 0 0 0;
+  font-size: 16px;
   color: #b4b4b4;
   font-weight: bold;
 }
