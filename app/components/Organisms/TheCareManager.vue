@@ -1,49 +1,58 @@
 <template>
   <div class="care-manager-list">
-    <div class="list-group">
-      <ul>
-        <li
-          v-for="caremana in caremanalist"
-          :key="caremana.name">
+    <v-container
+      grid-list-md
+      text-xs-center
+      class="list">
+      <v-layout
+        row
+        wrap>
+        <v-flex
+          v-for="(caremana) in caremanalist"
+          :key="caremana.name"
+          xs6>
           <a
             href="#"
-            class="list-group-item list-group-item-action flex-column align-items-start qa-list">
+            class="list-group-item list-group-item-action care-list">
             <div class="d-flex">
               <div class="panel-innersub main-font-color">
                 <img
                   src="../../assets/caremana-image/caremana1.png"
-                  alt= "">
+                  alt= ""
+                  class="image">
               </div>
               <div class="panel-innermain">
-                <h3>{{ caremana.name }}</h3>
-                <small class="sub-label">{{ caremana.name }}</small>
-                <small class="sub-label">{{ caremana.gender }}</small>
+                <div class="list">
+                  <h3>{{ caremana.name }}</h3>
+                  <small class="sub-label">{{ caremana.gender }}</small>
+                </div>
                 <p class="panel-contents">{{ caremana.comment }}</p>
-                <p class="qa-footer-l main-font-color">{{ caremana.major }}</p>
+                <p class="footer-left main-font-color">{{ caremana.major }}</p>
                 <a
-                  class="qa-footer-r"
+                  class="footer-right"
                   href="#">{{ caremana.area }}</a>
               </div>
             </div>
           </a>
-        </li>
-      </ul>
-    </div>
+        </v-flex>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
 <style scoped>
 .care-manager-list {
   display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: 40%;
+  margin: 20px;
 }
-.qa-list {
-  padding: 20px;
+.care-list {
+  padding: 5px 10px;
   margin: 24px 0 0 0;
 }
-
+.image {
+  max-width: 120px;
+  max-height: 120px;
+}
 .panel-innersub {
   float: left;
   margin-right: 10px;
@@ -51,11 +60,6 @@
   font-family: 'Roboto';
   font-size: 2.625rem;
   line-height: 1;
-}
-.subTitle {
-  display: block;
-  padding: 0;
-  margin: 0;
 }
 .panel-innermain {
   display: block;
@@ -66,7 +70,6 @@
 .sub-label {
   color: #b4b4b4;
   font-weight: bold;
-  line-height: 1.3;
 }
 .panel-contents {
   height: 88px;
@@ -74,12 +77,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.qa-footer-l {
+.list {
+  display: flex;
+}
+.footer-left {
   margin: 10px 0 0 0;
   float: left;
   font-weight: bold;
 }
-.qa-footer-r {
+.footer-right {
   margin: 10px 0 0 0;
   float: right;
   color: #b4b4b4;
@@ -89,7 +95,7 @@
 </style>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   computed: {

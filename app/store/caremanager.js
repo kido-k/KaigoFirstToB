@@ -33,6 +33,5 @@ export const actions = {
         }
       })
     )
-    console.log(state.caremanagers)
   }
 }
