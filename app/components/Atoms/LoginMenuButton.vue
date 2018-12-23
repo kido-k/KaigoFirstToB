@@ -5,10 +5,7 @@
       class="btn login btn-outline-secondary"
       role="button"
       aria-pressed="true">
-      <ion-icon
-        size="large"
-        name="lock"
-      /><br>
+      <v-icon large>lock</v-icon><br>
       ログイン
     </a>
   </div>

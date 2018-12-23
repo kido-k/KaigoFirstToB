@@ -4,9 +4,8 @@
       class="btn btn-outline-secondary non-border"
       type="button"
     >
-      <ion-icon
-        size="large"
-        name="menu"/><br>
+      <v-icon large>menu</v-icon>
+      <br>
       <p class="text">メニュー</p>
     </button>
   </div>

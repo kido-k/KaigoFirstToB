@@ -4,7 +4,9 @@
       class="btn btn-primary"
       type="button"
     >
-      <ion-icon name="search"/>
+      <v-icon
+        middle
+        color="white">search</v-icon>
       探す
     </button>
   </div>
