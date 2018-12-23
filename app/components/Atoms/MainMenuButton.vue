@@ -27,4 +27,34 @@
   padding: 0;
   margin: 0;
 }
+
+.login-panel {
+  display: inline-block;
+  width: 100%;
+  padding: 16px;
+  margin: 0;
+}
+.title {
+  padding: 0;
+  margin: 40px 0 0 0;
+  text-align: center;
+}
+.chk-box {
+  margin: 24px 0 0 0;
+}
+.login-btn {
+  margin: 24px 0 0 0;
+}
+.forget-btn {
+  margin: 24px 0 0 0;
+}
+.button {
+  text-align: center;
+  display: block;
+}
+.button > button {
+  width: 210px;
+  height: 64px;
+  font-size: 18px;
+}
 </style>

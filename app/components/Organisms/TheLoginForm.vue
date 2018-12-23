@@ -1,25 +1,22 @@
 <template>
   <div class="login-panel">
-    <!-- <LoginFromTitle class="title"/> -->
-    <div class="">
-      <div class="email-input form-group">
-        <label for="exampleInputId">ログインID</label>
-        <input
-          id="exampleInputId"
-          type="email"
-          class="form-control input"
-          aria-describedby="idHelp"
-          placeholder="sample">
-      </div>
-      <div class="email-input form-group">
-        <label
-          class="label"
-          for="exampleInputPassword">パスワード</label>
-        <input
-          type="password"
-          class="form-control"
-          placeholder="*******">
-      </div>
+    <div class="email-input form-group">
+      <label for="exampleInputId">ログインID</label>
+      <input
+        id="exampleInputId"
+        type="email"
+        class="form-control input"
+        aria-describedby="idHelp"
+        placeholder="sample">
+    </div>
+    <div class="email-input form-group">
+      <label
+        class="label"
+        for="exampleInputPassword">パスワード</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="*******">
     </div>
     <div>
       <AutoLoginCheck class="chk-box"/>
@@ -32,8 +29,8 @@
           @click="handleClickSubmit">ログイン</button>
       </div>
     </div>
-    <div>
-      <ForgetPasswordLink class="forget-btn"/>
+    <div class="forget-btn">
+      <ForgetPasswordLink/>
     </div>
   </div>
 </template>
@@ -48,44 +45,46 @@ export default {
     AutoLoginCheck,
     ForgetPasswordLink
   },
-  async handleClickSubmit() {
-    if (this.isCreateMode) {
-      try {
-        await this.register({ ...this.formData })
-        this.$notify({
-          type: 'success',
-          title: 'アカウント作成完了',
-          message: `${this.formData.id}として登録しました`,
-          position: 'bottom-right',
-          duration: 1000
-        })
-        this.$router.push('/posts/')
-      } catch {
-        this.$notify({
-          title: 'アカウント作成失敗',
-          message: `既に登録されているか、不正なユーザーIDです`,
-          position: 'bottom-right',
-          duration: 1000
-        })
-      }
-    } else {
-      try {
-        await this.login({ ...this.formData })
-        this.$notify({
-          type: 'success',
-          title: 'ログイン成功',
-          message: `${this.formData.id}としてログインしました`,
-          position: 'bottom-right',
-          duration: 1000
-        })
-        this.$router.push('/posts/')
-      } catch (e) {
-        this.$notify.error({
-          title: 'ログイン失敗',
-          message: `不正なユーザーIDです`,
-          position: 'bottom-right',
-          duration: 1000
-        })
+  methods: {
+    async handleClickSubmit() {
+      if (this.isCreateMode) {
+        try {
+          await this.register({ ...this.formData })
+          this.$notify({
+            type: 'success',
+            title: 'アカウント作成完了',
+            message: `${this.formData.id}として登録しました`,
+            position: 'bottom-right',
+            duration: 1000
+          })
+          this.$router.push('/posts/')
+        } catch {
+          this.$notify({
+            title: 'アカウント作成失敗',
+            message: `既に登録されているか、不正なユーザーIDです`,
+            position: 'bottom-right',
+            duration: 1000
+          })
+        }
+      } else {
+        try {
+          await this.login({ ...this.formData })
+          this.$notify({
+            type: 'success',
+            title: 'ログイン成功',
+            message: `${this.formData.id}としてログインしました`,
+            position: 'bottom-right',
+            duration: 1000
+          })
+          this.$router.push('/posts/')
+        } catch (e) {
+          this.$notify.error({
+            title: 'ログイン失敗',
+            message: `不正なユーザーIDです`,
+            position: 'bottom-right',
+            duration: 1000
+          })
+        }
       }
     }
   },

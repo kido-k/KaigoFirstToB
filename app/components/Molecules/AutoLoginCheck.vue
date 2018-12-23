@@ -12,6 +12,7 @@
 .input {
   cursor: pointer;
   width: 50%;
+  min-width: 200px;
   background: #f0fafa;
   border: 1px solid #b3b3b3;
   border-radius: 5px;

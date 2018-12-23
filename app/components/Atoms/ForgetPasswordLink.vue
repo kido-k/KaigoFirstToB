@@ -10,12 +10,8 @@
 .link {
   display: block;
   text-align: center;
-  padding: 0;
-  margin: 0;
 }
 .link > a {
   font-size: 18px;
-  padding: 0;
-  margin: 0;
 }
 </style>
