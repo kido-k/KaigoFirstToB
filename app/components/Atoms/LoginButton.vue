@@ -4,7 +4,8 @@
       type="submit"
       class="btn btn-primary"
       @click="handleClickSubmit">ログイン</button>
-</div></template>
+  </div>
+</template>
 
 <style scoped>
 .button {
