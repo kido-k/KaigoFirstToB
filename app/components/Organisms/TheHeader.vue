@@ -26,7 +26,7 @@ export default {
 <style>
 .theheader {
   height: 80px;
-  min-width: 930px;
+  min-width: 1100px;
   display: flex;
   align-items: flex-end;
   padding-left: 5px;

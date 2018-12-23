@@ -2,7 +2,7 @@
   <div class="login-panel">
     <!-- <LoginFromTitle class="title"/> -->
     <div class="">
-      <div class="email-input form-group id">
+      <div class="email-input form-group">
         <label for="exampleInputId">ログインID</label>
         <input
           id="exampleInputId"
@@ -11,16 +11,14 @@
           aria-describedby="idHelp"
           placeholder="sample">
       </div>
-      <div class="email-input form-group password">
+      <div class="email-input form-group">
         <label
           class="label"
           for="exampleInputPassword">パスワード</label>
-        <div class="input">
-          <input
-            type="password"
-            class="form-control"
-            placeholder="*******">
-        </div>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="*******">
       </div>
     </div>
     <div>
@@ -106,15 +104,6 @@ export default {
   padding: 0;
   margin: 40px 0 0 0;
   text-align: center;
-}
-.id {
-  margin: 8px 0 0 0;
-}
-.input {
-  margin: 10px 15px;
-}
-.password {
-  margin: 8px 0 0 0;
 }
 .chk-box {
   margin: 24px 0 0 0;
