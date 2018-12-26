@@ -14,21 +14,23 @@
       class="custom-select area">
       <option selected>地域で絞る</option>
       <option
-        v-for="category in categorys"
-        :key="category"
-        :value="category">
-        {{ category }}
-      </option>
+        value="tokyo">東京</option>
+      <option
+        value="osaka">大阪</option>
+      <option
+        value="chiba">千葉</option>
+      <option
+        value="fukuoka">福岡</option>
     </select>
     <select
       class="custom-select gender">
-      <option selected>性別で絞る</option>
       <option
-        v-for="category in categorys"
-        :key="category"
-        :value="category">
-        {{ category }}
-      </option>
+        value="default"
+        selected>性別で絞る</option>
+      <option
+        value="man">男性</option>
+      <option
+        value="woman">女性</option>
     </select>
   </div>
 </template>
